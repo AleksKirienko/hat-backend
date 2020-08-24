@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/game")
+@RequestMapping("api/game")
 public class WordsController {
 
     private WordsService wordsService;
@@ -25,7 +25,7 @@ public class WordsController {
         return ResponseEntity.ok(wordsService.save(words));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("api//{id}")
     public ResponseEntity findById(@PathVariable Long id) {
         Optional<Words> byId = wordsService.findById(id);
         return Objects.isNull(byId)
