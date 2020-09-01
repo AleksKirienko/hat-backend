@@ -25,7 +25,7 @@ public class WordsController {
         return ResponseEntity.ok(wordsService.save(words));
     }
 
-    @GetMapping("api//{id}")
+    @GetMapping("{id}")
     public ResponseEntity findById(@PathVariable Long id) {
         Optional<Words> byId = wordsService.findById(id);
         return Objects.isNull(byId)
